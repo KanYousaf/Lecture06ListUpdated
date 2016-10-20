@@ -11,43 +11,39 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by Kanwal PC on 10/17/2016.
+ * Created by Kanwal PC on 10/19/2016.
  */
 public class OwnAdapter extends ArrayAdapter<String> {
-
-//    private String[] season_names;
-//    private int[] season_images;
-//
-//    public OwnAdapter(Context context, String[] seasonNames, int[] seasonImages) {
-//        super(context, R.layout.ownlist, seasonNames);
-//        this.season_names=seasonNames;
-//        this.season_images=seasonImages;
+//    String[] season_names;
+//    int[] season_images;
+//    public OwnAdapter(Context context, String[] seasonName, int[] seasonImage) {
+//        super(context, R.layout.ownlist, seasonName);
+//        this.season_names=seasonName;
+//        this.season_images=seasonImage;
 //    }
 
-    private ArrayList<String> season_names;
-    private ArrayList<Integer> season_images;
-
-    public OwnAdapter(Context context, ArrayList<String> seasonNames, ArrayList<Integer> seasonImages) {
-        super(context, R.layout.ownlist, seasonNames);
-        this.season_names=seasonNames;
-        this.season_images=seasonImages;
+    ArrayList<String> season_names;
+    ArrayList<Integer> season_images;
+    public OwnAdapter(Context context, ArrayList<String> seasonName, ArrayList<Integer> seasonImage) {
+        super(context, R.layout.ownlist, seasonName);
+        this.season_names=seasonName;
+        this.season_images=seasonImage;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View rowView;
         LayoutInflater inflater=LayoutInflater.from(getContext());
-        rowView=inflater.inflate(R.layout.ownlist,parent,false);
+        rowView=inflater.inflate(R.layout.ownlist,parent, false);
 
-        TextView display_season_name=(TextView)rowView.findViewById(R.id.season_name);
-        ImageView display_season_image=(ImageView)rowView.findViewById(R.id.season_image);
+        ImageView display_image=(ImageView)rowView.findViewById(R.id.season_image);
+        TextView display_name=(TextView)rowView.findViewById(R.id.season_text);
 
-//        display_season_name.setText(season_names[position]);
-//        display_season_image.setImageResource(season_images[position]);
-//
-        display_season_name.setText(season_names.get(position));
-        display_season_image.setImageResource(season_images.get(position));
+//        display_name.setText(season_names[position]);
+//        display_image.setImageResource(season_images[position]);
 
+        display_name.setText(season_names.get(position));
+        display_image.setImageResource(season_images.get(position));
 
         return rowView;
     }

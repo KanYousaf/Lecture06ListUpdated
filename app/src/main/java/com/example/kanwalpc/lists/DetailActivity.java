@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
         String name=receive_intent.getStringExtra("season_name");
         details_season_tv.setText("SeasonID : " + data + "\n" + "Details: " + "\n" + name);
 
-//        display_details_season_tv.setText(Season_Details[data]);
+        display_details_season_tv.setText(Season_Details[data]);
 
         for(int i=0; i< Season_Details.length; i+=2){
             if(name.equals(Season_Details[i])){
